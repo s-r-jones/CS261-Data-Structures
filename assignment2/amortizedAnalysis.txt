@@ -1,0 +1,66 @@
+1)
+push 8 elements (8 units)/(8 ops)
+push 1 element/resize to 16 (9 units)/(1 op)
+push 7 elements(7 units)/(7 ops)
+push 1 element/resize to 32 (17 units / 1 op)
+push 7 elements(7 units)/(7 ops)
+push 8 elements(8 units)/(8 ops)
+
+Total cost = 56 units of time
+
+The operation moves to O(1) complexity as n grows large.
+
+2)
+push 8 elements (8 units)/(8 ops)
+resize to 10 (8 units)/(1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 12 (10 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 14 (12 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 16 (14 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 18 (16 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 20 (18 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 22 (20 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 24 (22 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 26 (24 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 28 (26 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 30 (28 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 32 (30 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+
+total cost = 258 units
+
+total operations = 44
+
+This moves to O(n^2) complexity as n grows large
+
+3)
+
+This data structure would perform poorly if one were to constantly push and then pop.
+
+
+Array cap 10
+Array size 10
+
+push()
+
+Array cap 20
+Array size 11
+
+pop()
+
+Array cap 10
+Array size 10
+
+
+
+This operation would be very costly due to all the resizing and copying. To fix this we can change the requirements to shrink the array. Instead of n/2 we can make n/4. This would create a more flexible data structure and not require as many operations 
